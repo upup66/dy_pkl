@@ -83,21 +83,21 @@ act_dy.loc[(act_dy['新老客']=='新客')&(act_dy['是否首购直播间下单'
 
 #%%导出
 
-# act_dy.to_excel(r"C:\数据资料\抖音订单分析\抖音直播分析\2023-03-28\订单数据.xlsx",index=False)
+act_dy.to_excel(r"C:\数据资料\抖音订单分析\抖音直播分析\2023-03-28\订单数据.xlsx",index=False)
 
 #%%
 # 拼接季度数据
-act_dy1 = act_dy.copy()
+# act_dy1 = act_dy.copy()
 
 #%%汇总
-act_dy2 = pd.concat([act_dy1,act_dy],ignore_index=True)
+# act_dy2 = pd.concat([act_dy1,act_dy],ignore_index=True)
 
 # 商品名统一
-pin = act_dy2.groupby('商家编码').agg(商品名=('选购商品','last'))
-act_dy2['商品名称'] = act_dy2['商家编码'].map(pin['商品名'])
+# pin = act_dy2.groupby('商家编码').agg(商品名=('选购商品','last'))
+# act_dy2['商品名称'] = act_dy2['商家编码'].map(pin['商品名'])
 
 
-act_dy2.to_excel(r"C:\数据资料\抖音订单分析\抖音直播分析\2023Q1\订单数据.xlsx",index=False)
+# act_dy2.to_excel(r"C:\数据资料\抖音订单分析\抖音直播分析\2023Q1\订单数据.xlsx",index=False)
 
 
 # 2023-03-29 09:49:43
